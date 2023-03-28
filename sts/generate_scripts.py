@@ -1,8 +1,21 @@
 
 bl = "\\"
 dir_name = "DIR_NAME='sts'_${BATCH_SIZE_PER_GPU}_${WEIGHT_DECAY}_${LEARN_RATE}_$(date +'%m-%d-%y_%H-%M')"
-models = [{'m':'ixabertesv1'},{'m':'ixabertesv2'}, {'m':'ixambert'},{'m':'mdeberta-v3-base'}, {'m':'xlm-roberta-base'}, {'m':'xlm-roberta-large', 'grad':2} ]
-names = {'ixambert':'/tartalo03/users/ragerri/resources/ixambert-base-cased', 'ixabertesv1':'/tartalo03/users/ragerri/resources/IXABERTes_v1', 'ixabertesv2':'/tartalo03/users/ragerri/resources/IXABERTes_v2','mdeberta-v3-base':'microsoft/mdeberta-v3-base','xlm-roberta-base':'xlm-roberta-base', 'xlm-roberta-large':'xlm-roberta-large'}
+models = [
+    {'m':'stsb_xlm_r_multilingual'},
+    {'m':'bertin_roberta_base'}, 
+    {'m':'alberti_base'},
+    {'m':'roberta_base_bne'}, 
+    {'m':'roberta_large_bne', 'grad':2}, 
+]
+
+names = {
+    'stsb_xlm_r_multilingual':'sentence-transformers/stsb-xlm-r-multilingual', 
+    'bertin_roberta_base':'bertin-project/bertin-roberta-base-spanish', 
+    'alberti_base':'flax-community/alberti-bert-base-multilingual-cased',
+    'roberta_base_bne':'PlanTL-GOB-ES/roberta-base-bne',
+    'roberta_large_bne':'PlanTL-GOB-ES/roberta-large-bne', 
+   }
 
 batches = [8, 16, 32]
 weight_dec = ['0.1', '0.01']

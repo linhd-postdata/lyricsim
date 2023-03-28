@@ -1,5 +1,6 @@
 # Loading script for the STS dataset.
 import datasets
+import pandas as pd
 
 logger = datasets.logging.get_logger(__name__)
 
@@ -85,3 +86,13 @@ class STS(datasets.GeneratorBasedBuilder):
                     "label": label
                 }
                 guid += 1
+    def _generate_examples(self, filepath):
+        logger.info("⏳ Generating examples from = %s", filepath)
+        df = pd.read_table(filepath, sep='\t')
+        for index, row in df.iterrows():
+            yield index, {
+                    "id": str(index),
+                    "sentence1": row['sentence1'],
+                    "sentence2": row['sentence2'],
+                    "label": row['label']
+                }
