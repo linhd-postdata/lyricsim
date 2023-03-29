@@ -26,6 +26,8 @@ for model_d in models:
     name = names[model]
     grad = model_d['grad'] if 'grad' in model_d else 1
     for batch in batches:
+        if batch == 32:
+            grad *=2
         batch_noGrad = int(batch / grad)
         for weight in weight_dec:
             for lr in learn_rate:

@@ -537,7 +537,8 @@ def main():
 
 #         for test_dataset, task in zip(test_datasets, tasks):  ####################################################### DOBLE EVALUATION!!!!!!!!!!!#########################################
         # Removing the `label` columns because it contains -1 and Trainer won't like that.
-        test_dataset.remove_columns_("label")
+        test_dataset = test_dataset.remove_columns("label")
+        print(test_dataset)
         predictions = trainer.predict(test_dataset=test_dataset).predictions
         predictions = np.squeeze(predictions) if is_regression else np.argmax(predictions, axis=1)
 
