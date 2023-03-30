@@ -2,19 +2,25 @@
 bl = "\\"
 dir_name = "DIR_NAME='sts'_${BATCH_SIZE_PER_GPU}_${WEIGHT_DECAY}_${LEARN_RATE}_$(date +'%m-%d-%y_%H-%M')"
 models = [
-    {'m':'stsb_xlm_r_multilingual'},
-    {'m':'bertin_roberta_base'}, 
-    {'m':'alberti_base'},
-    {'m':'roberta_base_bne'}, 
-    {'m':'roberta_large_bne', 'grad':2}, 
+    #{'m':'stsb_xlm_r_multilingual'},
+    #{'m':'bertin_roberta_base'}, 
+    #{'m':'alberti_base'},
+    #{'m':'roberta_base_bne'}, 
+    #{'m':'roberta_large_bne', 'grad':2}, 
+    #{'m':'xlm_roberta_base'},
+    #{'m':'xlm_roberta_large', 'grad':2},
+    #{'m':'mdeberta3'}
 ]
 
 names = {
-    'stsb_xlm_r_multilingual':'sentence-transformers/stsb-xlm-r-multilingual', 
-    'bertin_roberta_base':'bertin-project/bertin-roberta-base-spanish', 
-    'alberti_base':'flax-community/alberti-bert-base-multilingual-cased',
-    'roberta_base_bne':'PlanTL-GOB-ES/roberta-base-bne',
-    'roberta_large_bne':'PlanTL-GOB-ES/roberta-large-bne', 
+    #'stsb_xlm_r_multilingual':'sentence-transformers/stsb-xlm-r-multilingual', 
+    #'bertin_roberta_base':'bertin-project/bertin-roberta-base-spanish', 
+    #'alberti_base':'flax-community/alberti-bert-base-multilingual-cased',
+    #'roberta_base_bne':'PlanTL-GOB-ES/roberta-base-bne',
+    #'roberta_large_bne':'PlanTL-GOB-ES/roberta-large-bne', 
+    #'xlm_roberta_base':'xlm-roberta-base',
+    #'xlm_roberta_large' : 'xlm-roberta-large',
+    #'mdeberta3': 'microsoft/mdeberta-v3-base'
    }
 
 batches = [8, 16, 32]
