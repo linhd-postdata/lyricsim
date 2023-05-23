@@ -1,6 +1,7 @@
 .devcontainer/
-sts/outputs/
+sts/outputs*/
 sts/wandb/
 sts/logs/
 sts/*.tsv
 sts/*.sh
+models/
